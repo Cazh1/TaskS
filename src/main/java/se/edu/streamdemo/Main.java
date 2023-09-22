@@ -13,7 +13,8 @@ public class Main {
         ArrayList<Task> tasksData = dataManager.loadData();
 
         System.out.println("Printing all data ...");
-        printAllData(tasksData);
+        //printAllData(tasksData);
+        //printAllDataUsingStream(tasksData);
 
         System.out.println("Printing deadlines ...");
         printDeadlines(tasksData);
@@ -36,6 +37,12 @@ public class Main {
         for (Task t : tasksData) {
             System.out.println(t);
         }
+    }
+
+    public static void printAllDataUsingStream (ArrayList<Task> tasks) {
+        System.out.println("Using Streams");
+        tasks.stream()
+                .forEach(System.out::println);
     }
 
     public static void printDeadlines(ArrayList<Task> tasksData) {
